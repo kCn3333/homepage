@@ -1,0 +1,19 @@
+# ==========================================
+# Image Folder Protection
+# Disable directory listing
+# ==========================================
+
+# Disable directory browsing
+Options -Indexes
+
+# Allow only image files to be accessed
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Deny everything else
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
