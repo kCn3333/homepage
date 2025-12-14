@@ -103,7 +103,7 @@ const Projects: React.FC = () => {
                 title="K8s Cluster"
                 description="Building a high-availability Kubernetes cluster with three mini PCs for container orchestration."
                 to="/projects/cluster"
-                tags={['Kubernetes', 'HA', 'Hardware']}
+                tags={['Kubernetes', 'Hardware']}
                 color="text-blue-300"
             />
 
@@ -112,7 +112,7 @@ const Projects: React.FC = () => {
                 title="Home Server"
                 description="Custom home server build based on a low-power thin client with storage modifications."
                 to="/projects/home-server"
-                tags={['Hardware', 'Modding']}
+                tags={['Hardware', 'Modding', 'Server']}
                 color="text-gray-200"
             />
 
@@ -136,10 +136,10 @@ const Projects: React.FC = () => {
 
             <ProjectRow
                 icon="fab fa-linux"
-                title="Linux Config"
-                description="Custom dotfiles and configurations for Bash, Starship, and system monitoring."
+                title="Linux Bash"
+                description="Some console customization, bash scritps, and configs."
                 to="/projects/linux"
-                tags={['Bash', 'Zsh', 'Rice']}
+                tags={['Bash', 'Starship']}
                 color="text-yellow-400"
             />
         </section>
@@ -154,7 +154,7 @@ const Projects: React.FC = () => {
                     title="Study Projects"
                     description="Archive of programming assignments and projects from my university studies."
                     href="https://github.com/kCn3333/studia"
-                    tags={['C++', 'Java', 'Uni']}
+                    tags={['C++', 'Java', 'Study']}
                     color="text-gray-400"
                 />
 

@@ -159,15 +159,16 @@ const Home: React.FC = () => {
                 SYSTEM_READY
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
-                Hello and welcome, I'm <br />
+            <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                Hello and welcome, I'm 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-terminal-green to-emerald-300">
                    kCn
                 </span>
-            </h1>
+            </h2>
             
             <p className="text-lg md:text-xl text-terminal-dim max-w-2xl font-light leading-relaxed">
                 A computer enthusiast & hardware tinkerer exploring the boundaries of 
+                <br />
                 <span className="text-white font-normal mx-1">self-hosting</span>, 
                 <span className="text-white font-normal mx-1">development</span>, and 
                 <span className="text-white font-normal mx-1">infrastructure</span>.

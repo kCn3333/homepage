@@ -19,7 +19,8 @@ const About: React.FC = () => {
                 Hi, I'm <span className="text-white font-medium">kCn</span>. Just another computer enthusiast.
             </p>
             <p>
-                I've always been into technology and everything that comes along with it. As a child, I used to take apart radios and televisions just to figure out what was going on inside and how they worked.
+                I've always been into technology and everything that comes along with it. <br /> 
+                As a child, I used to take apart radios and televisions just to figure out what was going on inside and how they worked.
             </p>
             <p>
                 I put together my first computer when I was 12. When its performance started falling behind my needs, I got into overclocking. This journey saw me burn through a few power supplies and motherboards along the way.

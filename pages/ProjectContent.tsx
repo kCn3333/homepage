@@ -145,22 +145,19 @@ export const KubernetesProject: React.FC = () => {
       {(openModal) => (
         <ProjectLayout title="Kubernetes Cluster" category="Infrastructure">
           <p>
-            After getting the hang of Docker, the next logical step was diving into 
+            After getting the hang of Docker (well, more or less), the next logical step was diving into 
             <span className="text-white font-medium"> Kubernetes</span>. At first, it seemed like an impossibly complex beast. 
             But after spending quality time with minikube, I wanted more: a real cluster, not just a single-node playground.
           </p>
-
-          <div className="border-l-2 border-terminal-green pl-6 py-2 my-6 italic text-terminal-dim">
-            "Why deploy manually when you can let Git do the work?"
-          </div>
-
           <p>
-            My priorities were compact design, low power consumption, fanless operation, and expandability.
-            I settled on three <span className="text-white font-medium">HP T630 thin clients</span>. Three is the 
-            minimum number of nodes needed for high availability and proper quorum in Kubernetes.
+            My priorities were compact design, low power consumption, quiet operation (ideally fanless), reasonable price, 
+            and at least some options for expanding RAM or storage. After a bit of research, I settled on three HP T630 thin clients.
+            <span className="text-white font-medium">HP T630 thin clients</span>
+             Why three? That's the minimum number of nodes needed for high availability and proper quorum in Kubernetes. Plus, it leaves 
+            room to scale up if I decide to add more nodes down the line.
           </p>
 
-          <ImageBox caption="Cluster Hardware Specs">
+          <ImageBox caption="Three HP T630 thin clients">
             <div className="flex flex-col md:flex-row gap-8 items-center w-full">
                 <div className="w-full md:w-1/2">
                   <ZoomableImage 
@@ -195,11 +192,13 @@ export const KubernetesProject: React.FC = () => {
             </div>
           </ImageBox>
 
-          <p>
-            The goal is simple: learn, experiment, and test everything from deployment to full orchestration. 
-            Starting with k3s on Ubuntu and eventually working my way up to a production-grade cluster on Talos, 
-            with full GitOps workflow using tools like ArgoCD or Flux.
-          </p>
+            <p>
+                And that's how my Kubernetes adventure began. The goal is simple: learn, experiment, and test everything 
+                from deployment and management to fully transitioning my self-hosted services from individual containers 
+                to complete orchestration. Starting with k3s on Ubuntu and eventually working my way up to a 
+                production-grade cluster on Talos, with full GitOps workflow using tools like ArgoCD or Flux. 
+                Because why deploy manually when you can let Git do the work? It's going to be a fun ride.
+            </p>
         </ProjectLayout>
       )}
     </ProjectWrapper>
@@ -223,7 +222,7 @@ export const HomeServerProject: React.FC = () => {
             I settled on a <span className="text-white font-medium">Dell Wyse 5070</span> thin client.
           </p>
 
-          <ImageBox caption="Dell Wyse 5070 Base Unit">
+          <ImageBox caption="Dell Wyse 5070 Thin Client">
             <div className="max-w-lg mx-auto">
               <ZoomableImage 
                 src={img("img/server/dell.jpg")}
@@ -234,8 +233,11 @@ export const HomeServerProject: React.FC = () => {
           </ImageBox>
 
           <p>
-            Originally, it came with a passively cooled Intel Pentium Silver J5005 processor. I swapped out the RAM for 2x SK Hynix 8GB DDR4
-            2666MHz SODIMM sticks and replaced the storage with a 256GB Intel SSD.
+                Originally, it came with a passively cooled Intel Pentium Silver J5005 processor – 4 cores, 4MB cache,
+                running at 1.50 GHz up to 2.80 GHz and 8GB of RAM. I swapped out the RAM for 2x SK Hynix 8GB DDR4
+                2666MHz SODIMM sticks and disabled in the Bios the 16GB eMMC Flash soldered SSD, replacing it with a
+                256GB Intel SSD 2280 M2 SATA drive. However, there was still the issue of connecting extra drives for
+                data storage. After digging into it and doing some research, I found a way to sort that out.
           </p>
           
           <h3 className="text-2xl text-white font-bold mt-8 mb-4">Storage Modifications</h3>
@@ -294,22 +296,28 @@ export const HomeServerProject: React.FC = () => {
             They utilize minimal power (0.5A) and remain nearly silent at 5400 RPM.
           </p>
 
-          <ImageBox caption="Final Assembly with Drive Cage">
+          <ImageBox caption="Final Assembly">
              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                 <ZoomableImage 
-                  src={img("img/server/server2_m.jpg")}
+                  src={img("img/server/server2.jpg")}
                   fullSrc={img("img/server/server2.jpg")}
                   alt="Server assembly process" 
                   openModal={openModal}
                 />
                 <ZoomableImage 
-                  src={img("img/server/server_m.jpg")}
+                  src={img("img/server/server.jpg")}
                   fullSrc={img("img/server/server.jpg")}
                   alt="Completed home server setup" 
                   openModal={openModal}
                 />
              </div>
           </ImageBox>
+          <p>
+                Finally, the server meets all my expectations. It's passively cooled, making it super quiet, and it only
+                draws about 10 watts when idle. This project gave me valuable experience in configuring and managing a
+                server and network services. It also marked the beginning of a new adventure with my own little homelab.
+          </p>
+
         </ProjectLayout>
       )}
     </ProjectWrapper>
@@ -353,7 +361,7 @@ export const LinuxProject: React.FC = () => {
                     <h3 className="text-2xl text-white font-bold mb-2">Bash Scripts</h3>
                     <p className="text-terminal-dim mb-4">Automation scripts and environment variables for system administration.</p>
                     <a href="https://github.com/kCn3333/linux-bash" target="_blank" rel="noopener noreferrer" className="text-terminal-green hover:underline">
-                        View .bashrc &rarr;
+                        View bash repo &rarr;
                     </a>
                 </div>
                 <div className="w-full md:w-1/2">
@@ -397,14 +405,16 @@ export const MiningRigProject: React.FC = () => {
       {(openModal) => (
         <ProjectLayout title="Mining Rig (2014)" category="Archive">
           <p>
-            Around late 2013, I built a mining rig for Scrypt-based coins like Litecoin or Dogecoin.
-            I used existing parts, swapped the PSU, and bought three GPUs.
+                Around late 2013 and early 2014, I got interested in cryptocurrencies. Right away, I decided to build my
+                own mining rig. Mining Bitcoin on graphics cards wasn't profitable anymore, but the rising popularity of scrypt-based
+                coins like Litecoin or Dogecoin made them a better option. I used the computer parts I already had, only swapped out the power supply, 
+                and bought three additional graphics cards.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 my-10">
               <div className="glass p-6 rounded-xl flex flex-col justify-between">
                  <div>
-                    <h3 className="text-white font-bold mb-4 border-b border-white/10 pb-2">Hardware Manifest</h3>
+                    <h3 className="text-white font-bold mb-4 border-b border-white/10 pb-2">Mining Rig Setup</h3>
                     <ul className="space-y-3 font-mono text-sm text-terminal-dim mb-4">
                         <li className="flex justify-between"><span>Motherboard</span> <span className="text-white">ASUS P5K PRO</span></li>
                         <li className="flex justify-between"><span>GPU</span> <span className="text-white">3x Radeon R9 270X</span></li>
@@ -414,7 +424,7 @@ export const MiningRigProject: React.FC = () => {
                  </div>
                  <div className="mt-4">
                     <ZoomableImage 
-                      src={img("img/coins/cg_m.jpg")}
+                      src={img("img/coins/cg.jpg")}
                       fullSrc={img("img/coins/cg.jpg")}
                       alt="CGMiner screenshot" 
                       openModal={openModal}
@@ -424,7 +434,7 @@ export const MiningRigProject: React.FC = () => {
               </div>
               <div className="rounded-xl overflow-hidden shadow-lg h-full">
                  <ZoomableImage 
-                    src={img("img/coins/kopara_m.jpg")}
+                    src={img("img/coins/kopara.jpg")}
                     fullSrc={img("img/coins/kopara.jpg")}
                     alt="Mining rig with 3x R9 270X" 
                     openModal={openModal}
@@ -433,7 +443,10 @@ export const MiningRigProject: React.FC = () => {
               </div>
           </div>
 
-          <p className="mb-6">To handle heat and noise next to my desk, I employed some hardware mods:</p>
+          <p className="mb-6">                
+            To make everything work efficiently and effectively, I had to use a few tricks—especially since the rig
+                was sitting right next to my desk and could get pretty loud.:
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white/5 border border-white/5 p-6 rounded-xl hover:bg-white/10 transition-colors">
@@ -480,7 +493,7 @@ export const MiningRigProject: React.FC = () => {
              </div>
           </ImageBox>
 
-          <p className="mt-8 text-terminal-dim italic">
+          <p>
             Over that year, I managed to mine almost 3 Bitcoins. If I had kept them until today... well, you know the story.
           </p>
         </ProjectLayout>
@@ -496,8 +509,13 @@ export const OverclockingProject: React.FC = () => {
       {(openModal) => (
         <ProjectLayout title="Overclocking History" category="Archive">
           <p>
-            I decided to push components to their limits to get the most performance out of them.
-            Finding the right settings, ensuring adequate cooling, and stability testing was a great adventure.
+                As a teenager, I learned how computer works and managed to build a few machines for my family and
+                friends.
+                I decided to push the components to their limits and get the most performance out of them.
+                I quickly realized it wasn't as simple as it seemed. Finding the right settings, making sure the cooling
+                was adequate,
+                and doing all the stability tests – it was all about squeezing out as much computing power as possible.
+                It was a great adventure with a bit of competition, and it taught me a lot.
           </p>
 
           <div className="mt-12 space-y-12">
