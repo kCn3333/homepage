@@ -159,8 +159,8 @@ const Home: React.FC = () => {
                 SYSTEM_READY
             </div>
             
-            <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
-                Hello and welcome, I'm 
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                Hello and welcome, I'm <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-terminal-green to-emerald-300">
                    kCn
                 </span>

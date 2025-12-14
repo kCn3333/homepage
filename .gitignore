@@ -12,7 +12,6 @@ dist
 dist-ssr
 *.local
 
-README.md
 .env.local
 
 # Editor directories and files
