@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom utility for glass effect if needed, though Tailwind classes usually suffice */
+.glass {
+  @apply bg-[#0c0c0c]/80 backdrop-blur-md border border-terminal-border;
+}

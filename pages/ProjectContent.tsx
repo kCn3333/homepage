@@ -1,6 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+// Helper to resolve image paths correctly on GitHub Pages
+// Vite's import.meta.env.BASE_URL will be '/homepage/' in production
+const img = (path: string) => {
+  // Ensure we don't double slash if path starts with /
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${(import.meta as any).env.BASE_URL}${cleanPath}`;
+};
+
 // --- Lightbox Component ---
 interface LightboxProps {
   src: string;
@@ -155,7 +163,7 @@ export const KubernetesProject: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-8 items-center w-full">
                 <div className="w-full md:w-1/2">
                   <ZoomableImage 
-                    src="/img/cluster_img/hp1.jpg" 
+                    src={img("img/cluster_img/hp1.jpg")}
                     alt="Three HP T630 thin clients" 
                     openModal={openModal}
                   />
@@ -179,7 +187,7 @@ export const KubernetesProject: React.FC = () => {
           <ImageBox caption="Completed Rack Setup">
             <div className="max-w-md mx-auto">
               <ZoomableImage 
-                src="/img/cluster_img/rack1.jpg" 
+                src={img("img/cluster_img/rack1.jpg")}
                 alt="HP T630 cluster mounted in rack cabinet" 
                 openModal={openModal}
               />
@@ -217,7 +225,7 @@ export const HomeServerProject: React.FC = () => {
           <ImageBox caption="Dell Wyse 5070 Base Unit">
             <div className="max-w-lg mx-auto">
               <ZoomableImage 
-                src="/img/server/dell.jpg" 
+                src={img("img/server/dell.jpg")}
                 alt="Dell Wyse 5070 thin client" 
                 openModal={openModal}
               />
@@ -237,8 +245,8 @@ export const HomeServerProject: React.FC = () => {
                 <div className="text-terminal-green font-bold mb-2">M.2 Adapter</div>
                 <div className="w-full aspect-video bg-black/40 rounded-lg mb-3 overflow-hidden">
                     <ZoomableImage 
-                      src="/img/server/m2_m.jpg" 
-                      fullSrc="/img/server/m2.jpg"
+                      src={img("img/server/m2_m.jpg")}
+                      fullSrc={img("img/server/m2.jpg")}
                       alt="M2 to SATA adapter card" 
                       openModal={openModal}
                       className="w-full h-full object-cover"
@@ -251,14 +259,14 @@ export const HomeServerProject: React.FC = () => {
                 <div className="text-terminal-green font-bold mb-2">Power Mod</div>
                 <div className="w-full aspect-video bg-black/40 rounded-lg mb-3 overflow-hidden grid grid-cols-2 gap-1">
                      <ZoomableImage 
-                      src="/img/server/sata_to_usb_m.jpg"
-                      fullSrc="/img/server/sata_to_usb.jpg"
+                      src={img("img/server/sata_to_usb_m.jpg")}
+                      fullSrc={img("img/server/sata_to_usb.jpg")}
                       alt="19 pin USB" 
                       openModal={openModal}
                     />
                      <ZoomableImage 
-                      src="/img/server/sata_to_usb2_m.jpg"
-                      fullSrc="/img/server/sata_to_usb2.jpg"
+                      src={img("img/server/sata_to_usb2_m.jpg")}
+                      fullSrc={img("img/server/sata_to_usb2.jpg")}
                       alt="SATA Power" 
                       openModal={openModal}
                     />
@@ -270,7 +278,7 @@ export const HomeServerProject: React.FC = () => {
                 <div className="text-terminal-green font-bold mb-2">Cabling</div>
                 <div className="w-full aspect-video bg-black/40 rounded-lg mb-3 overflow-hidden">
                     <ZoomableImage 
-                      src="/img/server/angle_sata_cables.jpg" 
+                      src={img("img/server/angle_sata_cables.jpg")}
                       alt="Angled SATA data cables" 
                       openModal={openModal}
                       className="w-full h-full object-cover"
@@ -288,14 +296,14 @@ export const HomeServerProject: React.FC = () => {
           <ImageBox caption="Final Assembly with Drive Cage">
              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                 <ZoomableImage 
-                  src="/img/server/server2_m.jpg" 
-                  fullSrc="/img/server/server2.jpg"
+                  src={img("img/server/server2_m.jpg")}
+                  fullSrc={img("img/server/server2.jpg")}
                   alt="Server assembly process" 
                   openModal={openModal}
                 />
                 <ZoomableImage 
-                  src="/img/server/server_m.jpg" 
-                  fullSrc="/img/server/server.jpg"
+                  src={img("img/server/server_m.jpg")}
+                  fullSrc={img("img/server/server.jpg")}
                   alt="Completed home server setup" 
                   openModal={openModal}
                 />
@@ -331,7 +339,7 @@ export const LinuxProject: React.FC = () => {
                 </div>
                 <div className="w-full md:w-1/2">
                   <ZoomableImage 
-                    src="/img/lnx/console.jpg" 
+                    src={img("img/lnx/console.jpg")}
                     alt="Starship prompt customization" 
                     openModal={openModal}
                   />
@@ -349,7 +357,7 @@ export const LinuxProject: React.FC = () => {
                 </div>
                 <div className="w-full md:w-1/2">
                   <ZoomableImage 
-                    src="/img/lnx/console2.jpg" 
+                    src={img("img/lnx/console2.jpg")}
                     alt="Bash terminal customization" 
                     openModal={openModal}
                   />
@@ -367,7 +375,7 @@ export const LinuxProject: React.FC = () => {
                 </div>
                 <div className="w-full md:w-auto md:max-w-xs">
                   <ZoomableImage 
-                    src="/img/lnx/conky.jpg" 
+                    src={img("img/lnx/conky.jpg")}
                     alt="Conky system monitor" 
                     openModal={openModal}
                   />
@@ -405,8 +413,8 @@ export const MiningRigProject: React.FC = () => {
                  </div>
                  <div className="mt-4">
                     <ZoomableImage 
-                      src="/img/coins/cg_m.jpg"
-                      fullSrc="/img/coins/cg.jpg" 
+                      src={img("img/coins/cg_m.jpg")}
+                      fullSrc={img("img/coins/cg.jpg")}
                       alt="CGMiner screenshot" 
                       openModal={openModal}
                       className="rounded-md border border-white/10"
@@ -415,8 +423,8 @@ export const MiningRigProject: React.FC = () => {
               </div>
               <div className="rounded-xl overflow-hidden shadow-lg h-full">
                  <ZoomableImage 
-                    src="/img/coins/kopara_m.jpg" 
-                    fullSrc="/img/coins/kopara.jpg"
+                    src={img("img/coins/kopara_m.jpg")}
+                    fullSrc={img("img/coins/kopara.jpg")}
                     alt="Mining rig with 3x R9 270X" 
                     openModal={openModal}
                     className="h-full w-full object-cover"
@@ -433,14 +441,14 @@ export const MiningRigProject: React.FC = () => {
                 <div className="flex gap-4">
                     <div className="w-1/2">
                         <ZoomableImage 
-                          src="/img/coins/pins.jpg" 
+                          src={img("img/coins/pins.jpg")}
                           alt="PCIe pins" 
                           openModal={openModal}
                         />
                     </div>
                     <div className="w-1/2">
                         <ZoomableImage 
-                          src="/img/coins/pins2.jpg" 
+                          src={img("img/coins/pins2.jpg")}
                           alt="PCIe pins close up" 
                           openModal={openModal}
                         />
@@ -452,8 +460,8 @@ export const MiningRigProject: React.FC = () => {
                 <div className="text-terminal-green font-bold mb-2 text-lg">Dummy Plug</div>
                 <p className="text-sm text-terminal-dim mb-4">A hardware dummy plug to simulate a connected monitor, preventing GPU suspension.</p>
                 <ZoomableImage 
-                    src="/img/coins/dummy_m.jpg" 
-                    fullSrc="/img/coins/dummyplug.jpg"
+                    src={img("img/coins/dummy_m.jpg")}
+                    fullSrc={img("img/coins/dummyplug.jpg")}
                     alt="HDMI dummy plug" 
                     openModal={openModal}
                 />
@@ -463,8 +471,8 @@ export const MiningRigProject: React.FC = () => {
           <ImageBox caption="My setup back in 2013-2014">
              <div className="max-w-md mx-auto">
                 <ZoomableImage 
-                  src="/img/coins/room_m.jpg" 
-                  fullSrc="/img/coins/room.jpg"
+                  src={img("img/coins/room_m.jpg")}
+                  fullSrc={img("img/coins/room.jpg")}
                   alt="My room with mining rig" 
                   openModal={openModal}
                 />
@@ -510,16 +518,16 @@ export const OverclockingProject: React.FC = () => {
                      <div className="md:w-1/2 flex gap-2">
                         <div className="w-1/2">
                           <ZoomableImage 
-                             src="/img/overclocking/5200_m.jpg" 
-                             fullSrc="/img/overclocking/5200.jpg"
+                             src={img("img/overclocking/5200_m.jpg")}
+                             fullSrc={img("img/overclocking/5200.jpg")}
                              alt="CPU-Z 5200MHz" 
                              openModal={openModal}
                           />
                         </div>
                         <div className="w-1/2">
                           <ZoomableImage 
-                             src="/img/overclocking/wc_m.jpg" 
-                             fullSrc="/img/overclocking/wc.jpg"
+                             src={img("img/overclocking/wc_m.jpg")}
+                             fullSrc={img("img/overclocking/wc.jpg")}
                              alt="Custom Water Cooling Loop" 
                              openModal={openModal}
                           />
@@ -541,24 +549,24 @@ export const OverclockingProject: React.FC = () => {
                      <div className="md:w-1/2 md:text-right flex gap-2 justify-end">
                         <div className="w-1/3">
                           <ZoomableImage 
-                             src="/img/overclocking/3600_m.jpg" 
-                             fullSrc="/img/overclocking/3600.jpg"
+                             src={img("img/overclocking/3600_m.jpg")}
+                             fullSrc={img("img/overclocking/3600.jpg")}
                              alt="OC 3600MHz" 
                              openModal={openModal}
                           />
                         </div>
                         <div className="w-1/3">
                           <ZoomableImage 
-                             src="/img/overclocking/4000_m.jpg" 
-                             fullSrc="/img/overclocking/4000.jpg"
+                             src={img("img/overclocking/4000_m.jpg")}
+                             fullSrc={img("img/overclocking/4000.jpg")}
                              alt="OC 4000MHz" 
                              openModal={openModal}
                           />
                         </div>
                         <div className="w-1/3">
                           <ZoomableImage 
-                             src="/img/overclocking/4160_m.jpg" 
-                             fullSrc="/img/overclocking/4160.jpg"
+                             src={img("img/overclocking/4160_m.jpg")}
+                             fullSrc={img("img/overclocking/4160.jpg")}
                              alt="OC 4160MHz" 
                              openModal={openModal}
                           />
@@ -580,16 +588,16 @@ export const OverclockingProject: React.FC = () => {
                      <div className="md:w-1/2 flex gap-2">
                         <div className="w-1/2">
                           <ZoomableImage 
-                             src="/img/overclocking/2355_m.jpg" 
-                             fullSrc="/img/overclocking/2355.jpg"
+                             src={img("img/overclocking/2355_m.jpg")}
+                             fullSrc={img("img/overclocking/2355.jpg")}
                              alt="Athlon 2355MHz" 
                              openModal={openModal}
                           />
                         </div>
                         <div className="w-1/2">
                           <ZoomableImage 
-                             src="/img/overclocking/2600_m.jpg" 
-                             fullSrc="/img/overclocking/2600.jpg"
+                             src={img("img/overclocking/2600_m.jpg")}
+                             fullSrc={img("img/overclocking/2600.jpg")}
                              alt="Athlon 2600MHz" 
                              openModal={openModal}
                           />
