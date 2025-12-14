@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const About: React.FC = () => {
@@ -6,14 +7,14 @@ const About: React.FC = () => {
       
       {/* Header */}
       <div className="mb-12 border-b border-white/10 pb-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">About Me</h1>
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">About Me</h2>
         <p className="text-terminal-green font-mono">kCn / Computer Enthusiast</p>
       </div>
 
       <div className="grid md:grid-cols-[2fr_1fr] gap-12">
           
         {/* Main Text */}
-        <div className="space-y-6 text-terminal-text/80 leading-relaxed text-lg font-light">
+        <div className="space-y-6 text-terminal-text/80 leading-relaxed text-base font-light">
             <p>
                 Hi, I'm <span className="text-white font-medium">kCn</span>. Just another computer enthusiast.
             </p>

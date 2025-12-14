@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -110,9 +111,9 @@ const ProjectLayout: React.FC<{
             <i className="fas fa-arrow-left mr-2"></i> Back to Projects
         </Link>
         <div className="text-terminal-green text-sm font-mono tracking-wider uppercase mb-2">{category}</div>
-        <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">{title}</h1>
+        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">{title}</h2>
       </div>
-      <div className="space-y-6 text-terminal-text/90 leading-relaxed text-lg font-light">
+      <div className="space-y-6 text-terminal-text/90 leading-relaxed text-base font-light">
         {children}
       </div>
     </div>

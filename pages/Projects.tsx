@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -74,10 +75,10 @@ const Projects: React.FC = () => {
   return (
     <div>
       <div className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 font-mono">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Projects<span className="animate-pulse text-terminal-green">_</span>
-        </h1>
-        <p className="text-terminal-dim max-w-2xl text-lg">
+        </h2>
+        <p className="text-terminal-dim max-w-2xl text-base">
           A collection of my work in self-hosting, hardware, and software development.
         </p>
       </div>
@@ -116,6 +117,15 @@ const Projects: React.FC = () => {
             />
 
             <ProjectRow
+                icon="fas fa-code"
+                title="Development"
+                description="Various software projects and applications, primarily developed in Java."
+                href="https://github.com/kCn3333"
+                tags={['Java', 'App', 'Dev']}
+                color="text-orange-400"
+            />
+
+            <ProjectRow
                 icon="fab fa-docker"
                 title="Docker Compose"
                 description="A collection of configuration files for self-hosted services running on my server."
@@ -131,15 +141,6 @@ const Projects: React.FC = () => {
                 to="/projects/linux"
                 tags={['Bash', 'Zsh', 'Rice']}
                 color="text-yellow-400"
-            />
-
-            <ProjectRow
-                icon="fas fa-code"
-                title="Development"
-                description="Various software projects and applications, primarily developed in Java."
-                href="https://github.com/kCn3333"
-                tags={['Java', 'App', 'Dev']}
-                color="text-orange-400"
             />
         </section>
 

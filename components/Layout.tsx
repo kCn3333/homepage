@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -41,7 +42,7 @@ const AnimatedLogo: React.FC = () => {
   return (
     <Link 
       to="/" 
-      className="relative font-mono font-bold text-xl tracking-tight group"
+      className="relative font-mono font-bold text-lg tracking-tight group"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -101,10 +102,10 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-20 flex items-center">
-      <div className="max-w-6xl mx-auto w-full px-6">
-        <div className="glass rounded-2xl px-6 py-3 flex justify-between items-center">
-          
+    <div className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+      <nav className="w-full max-w-5xl bg-[#0c0c0c]/80 backdrop-blur-xl border border-white/5 rounded-2xl shadow-2xl transition-all duration-300">
+        <div className="px-6 h-16 flex justify-between items-center">
+            
           <AnimatedLogo />
 
           {/* Desktop Menu */}
@@ -127,45 +128,45 @@ const Navbar: React.FC = () => {
             <i className={`fas ${isOpen ? 'fa-times' : 'fa-bars'} text-lg`}></i>
           </button>
         </div>
-      </div>
 
-      {/* Mobile Menu Dropdown */}
-      <div
-        className={`md:hidden absolute top-24 left-6 right-6 glass rounded-xl overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
-        }`}
-      >
-        <div className="flex flex-col p-2">
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                location.pathname === link.to 
-                  ? 'bg-white/5 text-white' 
-                  : 'text-terminal-dim hover:text-white hover:bg-white/5'
-              }`}
-            >
-              <i className={`${link.icon} w-5 text-center`}></i>
-              {link.label}
-            </Link>
-          ))}
-          {externalLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-4 py-3 rounded-lg text-terminal-dim hover:text-white hover:bg-white/5"
-            >
-              <i className={`${link.icon} w-5 text-center`}></i>
-              {link.label}
-              <i className="fas fa-external-link-alt text-xs opacity-50 ml-auto"></i>
-            </a>
-          ))}
+        {/* Mobile Menu Dropdown */}
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out border-t border-white/5 ${
+            isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+          }`}
+        >
+          <div className="flex flex-col p-4 space-y-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                  location.pathname === link.to 
+                    ? 'bg-white/5 text-white' 
+                    : 'text-terminal-dim hover:text-white hover:bg-white/5'
+                }`}
+              >
+                <i className={`${link.icon} w-5 text-center`}></i>
+                {link.label}
+              </Link>
+            ))}
+            {externalLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg text-terminal-dim hover:text-white hover:bg-white/5"
+              >
+                <i className={`${link.icon} w-5 text-center`}></i>
+                {link.label}
+                <i className="fas fa-external-link-alt text-xs opacity-50 ml-auto"></i>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </div>
   );
 };
 
