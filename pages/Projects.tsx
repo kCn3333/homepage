@@ -93,7 +93,7 @@ const Projects: React.FC = () => {
                 icon="fas fa-network-wired"
                 title="Homelab"
                 description="Comprehensive documentation of my infrastructure, services, and network configurations."
-                href="https://kcn3333.github.io/homelab/"
+                href="https://homelab.kcn333.com/"
                 tags={['Documentation', 'Infrastructure']}
                 color="text-green-500"
             />

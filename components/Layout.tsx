@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
   ];
 
   const externalLinks = [
-    { href: "https://kcn3333.github.io/homelab/", label: "Homelab", icon: "fas fa-server" },
+    { href: "https://homelab.kcn333.com", label: "Homelab", icon: "fas fa-server" },
   ];
 
   const NavItem = ({ to, label, icon, isExternal = false }: { to: string; label: string; icon: string; isExternal?: boolean }) => {
