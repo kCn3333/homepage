@@ -192,7 +192,7 @@ const Footer: React.FC = () => {
           
           {/* Left: Social Links */}
           <div className="flex items-center justify-center md:justify-start gap-6 text-xl">
-             <a href="mailto:cnk333@email.cz" className="text-terminal-dim hover:text-terminal-green transition-colors" title="Email">
+             <a href="mailto:kcn@kcn333.com" className="text-terminal-dim hover:text-terminal-green transition-colors" title="Email">
                <i className="fas fa-envelope"></i>
              </a>
              <a href="https://github.com/kCn3333" target="_blank" rel="noopener noreferrer" className="text-terminal-dim hover:text-terminal-green transition-colors" title="GitHub">

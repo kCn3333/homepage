@@ -151,9 +151,8 @@ export const KubernetesProject: React.FC = () => {
           </p>
           <p>
             My priorities were compact design, low power consumption, quiet operation (ideally fanless), reasonable price, 
-            and at least some options for expanding RAM or storage. After a bit of research, I settled on three HP T630 thin clients.
-            <span className="text-white font-medium">HP T630 thin clients</span>
-             Why three? That's the minimum number of nodes needed for high availability and proper quorum in Kubernetes. Plus, it leaves 
+            and at least some options for expanding RAM or storage. After a bit of research, I settled on three <span className="text-white font-medium">HP T630 thin clients</span>. 
+            Why three? That's the minimum number of nodes needed for high availability and proper quorum in Kubernetes. Plus, it leaves 
             room to scale up if I decide to add more nodes down the line.
           </p>
 

@@ -77,7 +77,7 @@ const About: React.FC = () => {
                             </div>
                             <div className="flex flex-col">
                                 <span className="text-xs uppercase tracking-wider opacity-50">Email</span>
-                                <span className="font-mono text-sm">cnk333@email.cz</span>
+                                <span className="font-mono text-sm">kcn@kcn333.com</span>
                             </div>
                         </a>
                     </li>
