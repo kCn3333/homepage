@@ -48,10 +48,6 @@ const About: React.FC = () => {
                         <span>Quantum Physics</span>
                     </div>
                     <div className="flex items-center gap-3 text-terminal-dim hover:text-white transition-colors">
-                        <i className="<fas fa-utensils text-terminal-green text-sm w-5 text-center"></i>
-                        <span>Cooking</span>
-                    </div>
-                    <div className="flex items-center gap-3 text-terminal-dim hover:text-white transition-colors">
                         <i className="fas fa-robot text-terminal-green text-sm w-5 text-center"></i>
                         <span>AI & LLMs</span>
                     </div>
