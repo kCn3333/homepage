@@ -31,32 +31,30 @@ const About: React.FC = () => {
 
             <div className="pt-8">
                 <h3 className="text-white font-bold mb-6 text-xl">Current Interests</h3>
-                <div className="grid grid-cols-2 gap-4">
-                    <div className="flex items-center gap-3 text-terminal-dim">
-                        <i className="fas fa-check text-terminal-green text-xs"></i>
+                    <div className="flex items-center gap-3 text-terminal-dim hover:text-white transition-colors">
+                        <i className="fas fa-server text-terminal-green text-sm w-5 text-center"></i>
                         <span>Self-hosting</span>
                     </div>
-                    <div className="flex items-center gap-3 text-terminal-dim">
-                        <i className="fas fa-check text-terminal-green text-xs"></i>
+                    <div className="flex items-center gap-3 text-terminal-dim hover:text-white transition-colors">
+                        <i className="fas fa-terminal text-terminal-green text-sm w-5 text-center"></i>
                         <span>Development</span>
                     </div>
-                    <div className="flex items-center gap-3 text-terminal-dim">
-                        <i className="fas fa-check text-terminal-green text-xs"></i>
+                    <div className="flex items-center gap-3 text-terminal-dim hover:text-white transition-colors">
+                        <i className="fas fa-chess-rook text-terminal-green text-sm w-5 text-center"></i>
                         <span>History</span>
                     </div>
-                    <div className="flex items-center gap-3 text-terminal-dim">
-                        <i className="fas fa-check text-terminal-green text-xs"></i>
+                    <div className="flex items-center gap-3 text-terminal-dim hover:text-white transition-colors">
+                        <i className="fas fa-atom text-terminal-green text-sm w-5 text-center"></i>
                         <span>Quantum Physics</span>
                     </div>
-                    <div className="flex items-center gap-3 text-terminal-dim">
-                        <i className="fas fa-check text-terminal-green text-xs"></i>
+                    <div className="flex items-center gap-3 text-terminal-dim hover:text-white transition-colors">
+                        <i className="<fas fa-utensils text-terminal-green text-sm w-5 text-center"></i>
                         <span>Cooking</span>
                     </div>
-                    <div className="flex items-center gap-3 text-terminal-dim">
-                        <i className="fas fa-check text-terminal-green text-xs"></i>
+                    <div className="flex items-center gap-3 text-terminal-dim hover:text-white transition-colors">
+                        <i className="fas fa-robot text-terminal-green text-sm w-5 text-center"></i>
                         <span>AI & LLMs</span>
                     </div>
-                </div>
             </div>
         </div>
 

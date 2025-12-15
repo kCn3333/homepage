@@ -176,14 +176,6 @@ const Projects: React.FC = () => {
                     color="text-gray-400"
                 />
 
-                <ProjectRow
-                    icon="fas fa-gamepad"
-                    title="CS 1.6 Config"
-                    description="Optimized config.cfg and autoexec.cfg files for Counter-Strike 1.6."
-                    href="#"
-                    tags={['Gaming', 'Config']}
-                    color="text-gray-400"
-                />
             </div>
         </section>
 
