@@ -4,7 +4,6 @@
 @tailwind utilities;
 
 /* Custom utility for glass effect */
-/* Updated to be softer: less opaque background, subtle white border instead of hard gray */
 .glass {
   @apply bg-[#0c0c0c]/60 backdrop-blur-md border border-white/5;
 }

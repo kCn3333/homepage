@@ -1,9 +1,9 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // Helper to resolve image paths correctly on GitHub Pages
-// Vite's import.meta.env.BASE_URL will be '/homepage/' in production
+// Vite's import.meta.env.BASE_URL will be '/' in production
 const img = (path: string) => {
   // Ensure we don't double slash if path starts with /
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
@@ -104,6 +104,11 @@ const ProjectLayout: React.FC<{
   category?: string;
   children: React.ReactNode;
 }> = ({ title, category = "Project", children }) => {
+  useEffect(() => {
+    document.title = `kCn | ${title}`;
+  }, [title]);
+
+
   return (
     <div className="max-w-4xl mx-auto">
       <div className="mb-10">

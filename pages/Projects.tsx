@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 interface ProjectRowProps {
@@ -72,6 +72,10 @@ const ProjectRow: React.FC<ProjectRowProps> = ({ icon, title, description, to, h
 };
 
 const Projects: React.FC = () => {
+  useEffect(() => {
+    document.title = "kCn | projects";
+  }, []);
+
   return (
     <div>
       <div className="mb-12">

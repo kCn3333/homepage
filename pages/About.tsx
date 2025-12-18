@@ -1,7 +1,12 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
+
 
 const About: React.FC = () => {
+  useEffect(() => {
+    document.title = "kCn | about";
+  }, []);
+
   return (
     <div className="max-w-4xl mx-auto">
       

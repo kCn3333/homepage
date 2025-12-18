@@ -148,6 +148,10 @@ const TypewriterTerminal: React.FC = () => {
 };
 
 const Home: React.FC = () => {
+    useEffect(() => {
+    document.title = "kCn | home page";
+  }, []);
+
   return (
     <div className="flex flex-col gap-20 relative">
         
