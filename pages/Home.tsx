@@ -173,9 +173,9 @@ const Home: React.FC = () => {
             <p className="text-lg md:text-xl text-terminal-dim max-w-2xl font-light leading-relaxed">
                 A computer enthusiast & hardware tinkerer exploring the boundaries of 
                 <br />
-                <span className="text-white font-normal mx-1">self-hosting</span>, 
-                <span className="text-white font-normal mx-1">development</span>, and 
-                <span className="text-white font-normal mx-1">infrastructure</span>.
+                <span className="text-white font-normal mx-1">self-hosting</span> 
+                <span className="text-white font-normal mx-1">development</span> and 
+                <span className="text-white font-normal mx-1">infrastructure</span>
             </p>
             <div className="border-l-2 border-terminal-green pl-6 py-2 my-6 italic text-terminal-dim">
             It's black because we're all fans of dark mode.
