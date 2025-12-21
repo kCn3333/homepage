@@ -20,7 +20,14 @@ const TypewriterTerminal: React.FC = () => {
         const data = await res.json();
         if (data.ip) ip = data.ip;
       } catch (e) {
-        console.error("Failed to fetch IP", e);
+        try {
+          const res2 = await fetch('https://api.seeip.org/jsonip');
+          const data2 = await res2.json();
+          if (data2.ip) ip = data2.ip;
+          else ip = "hidden";
+        } catch (e2) {
+          ip = "hidden";
+        }
       }
 
       const userAgent = navigator.userAgent;

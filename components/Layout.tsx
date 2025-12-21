@@ -173,16 +173,41 @@ const Navbar: React.FC = () => {
 // --- Footer Component ---
 const Footer: React.FC = () => {
   const [ip, setIp] = useState<string>('fetching...');
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
   const { isTerminalComplete } = useContext(TerminalContext);
 
   useEffect(() => {
-    fetch('https://api.ipify.org?format=json')
-      .then(res => res.json())
-      .then(data => {
-        if (data && data.ip) setIp(data.ip);
-        else setIp('unknown');
-      })
-      .catch(() => setIp('offline'));
+    // Better handle online/offline status using native browser events
+    const handleStatusChange = () => setIsOnline(navigator.onLine);
+    window.addEventListener('online', handleStatusChange);
+    window.addEventListener('offline', handleStatusChange);
+
+    // Multi-stage IP fetch to bypass potential browser blocks
+    const fetchIp = async () => {
+      try {
+        const res = await fetch('https://api.ipify.org?format=json');
+        const data = await res.json();
+        if (data.ip) setIp(data.ip);
+        else throw new Error("No IP in response");
+      } catch (e) {
+        // Fallback to secondary provider if ipify is blocked (common in Firefox)
+        try {
+            const res2 = await fetch('https://api.seeip.org/jsonip');
+            const data2 = await res2.json();
+            if (data2.ip) setIp(data2.ip);
+            else throw new Error("No IP in secondary response");
+        } catch (e2) {
+            setIp('restricted');
+        }
+      }
+    };
+
+    fetchIp();
+
+    return () => {
+        window.removeEventListener('online', handleStatusChange);
+        window.removeEventListener('offline', handleStatusChange);
+    };
   }, []);
 
   return (
