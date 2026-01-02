@@ -125,7 +125,7 @@ const TypewriterTerminal: React.FC = () => {
       {/* Terminal Title Bar */}
       <div className="bg-white/5 px-4 py-2 flex items-center justify-between border-b border-white/5 h-8">
         <div className="text-terminal-dim opacity-50">sh - 80x24</div>
-        <div className="text-terminal-dim font-semibold">kCn@web:~</div>
+        <div className="text-terminal-dim font-semibold">user@web:~</div>
         <div className="w-4"></div> {/* Spacer for balance */}
       </div>
       
