@@ -191,7 +191,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Animated Terminal Section */}
-      <div className="w-full max-w-4xl mx-auto mb-12">
+      <div className="w-full max-w-4xl ml-auto mb-12">
           <TypewriterTerminal />
       </div>
 

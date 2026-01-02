@@ -21,16 +21,12 @@ const Background: React.FC = () => {
       {/* Dark overlay base - Lighter on non-home pages */}
       <div className={`absolute inset-0 z-0 transition-colors duration-700 ${isHome ? 'bg-[#050505]' : 'bg-[#0e0e0e]'}`}></div>
       
-      {/* 
-         Replaced 'blur' filter with radial-gradient for smoother, non-pixelated transitions.
-         Centered by parent flex container, then animated with wander.
-      */}
+ 
+      {/* Main Green Light - Soft Radial Gradient - Shifted 100px right */}
+      <div className="absolute w-[80vw] h-[80vw] md:w-[1000px] md:h-[1000px] bg-[radial-gradient(circle,rgba(76,175,80,0.1)_0%,rgba(0,0,0,0)_70%)] animate-wander translate-x-[100px]"></div>
       
-      {/* Main Green Light - Soft Radial Gradient */}
-      <div className="absolute w-[80vw] h-[80vw] md:w-[1000px] md:h-[1000px] bg-[radial-gradient(circle,rgba(76,175,80,0.1)_0%,rgba(0,0,0,0)_70%)] animate-wander"></div>
-      
-      {/* Secondary Cool Light - Soft Radial Gradient - Offset animation */}
-      <div className="absolute w-[90vw] h-[90vw] md:w-[1200px] md:h-[1200px] bg-[radial-gradient(circle,rgba(30,41,59,0.15)_0%,rgba(0,0,0,0)_70%)] animate-wander-slow" style={{ animationDelay: '-7s' }}></div>
+      {/* Secondary Cool Light - Soft Radial Gradient - Offset animation - Shifted 100px right */}
+      <div className="absolute w-[90vw] h-[90vw] md:w-[1200px] md:h-[1200px] bg-[radial-gradient(circle,rgba(30,41,59,0.15)_0%,rgba(0,0,0,0)_70%)] animate-wander-slow translate-x-[100px]" style={{ animationDelay: '-7s' }}></div>
     </div>
   );
 };
